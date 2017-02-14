@@ -1,0 +1,6 @@
+---
+- hosts: all
+  gather_facts: False
+  serial: 2
+  roles:
+  - ansible-require-implicity-localhost-role
