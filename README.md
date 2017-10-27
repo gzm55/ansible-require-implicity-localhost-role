@@ -7,6 +7,9 @@ Before ansible 2.3, to get the correct current local python interpreter,
 the `localhost` should not be in the inventory file, 
 and use `delegate_to: localhost` to run a moudle locally.
 
+P.S. Begin from ansible 2.3, we can use `ansible_playbook_python` fact
+to get the current local python interpreter.
+
 Requirements
 ------------
 
