@@ -4,4 +4,4 @@
   when: inventory_hostname == ansible_play_hosts[0]
   assert:
     that:
-      - "groups.all | intersect(['localhost', '127.0.0.1']) | list | length == 0"
+      - "not groups.all | intersect(['localhost', '127.0.0.1', '::1']) | list"
