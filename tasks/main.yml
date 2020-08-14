@@ -1,7 +1,9 @@
 ---
 - name: require implicity localhost
   run_once: True
-  when: inventory_hostname == ansible_play_hosts[0]
+  when: inventory_hostname == ansible_play_hosts_all[0]
   assert:
     that:
-      - "not groups.all | intersect(['localhost', '127.0.0.1', '::1']) | list"
+    - "'localhost' not in hostvars"
+    - "'127.0.0.1' not in hostvars"
+    - "'::1' not in hostvars"
