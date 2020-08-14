@@ -27,6 +27,8 @@ script:
   # Basic role check
   - ansible-playbook tests/test.yml -i tests/inventory  --limit '!localhost'
   - true && ! ansible-playbook tests/test.yml -i tests/inventory-with-localhost
+  - true && ! ansible-playbook tests/test.yml -i tests/inventory-with-localhost-ipv4
+  - true && ! ansible-playbook tests/test.yml -i tests/inventory-with-localhost-ipv6
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

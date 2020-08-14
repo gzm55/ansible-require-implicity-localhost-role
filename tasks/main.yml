@@ -3,7 +3,4 @@
   run_once: True
   when: inventory_hostname == ansible_play_hosts_all[0]
   assert:
-    that:
-    - "'localhost' not in hostvars"
-    - "'127.0.0.1' not in hostvars"
-    - "'::1' not in hostvars"
+    that: "'inventory_file' not in hostvars['localhost']"
